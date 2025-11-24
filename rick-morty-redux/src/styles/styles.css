@@ -1,0 +1,205 @@
+/* ================= GLOBAL ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f172a;
+  color: #f1f5f9;
+}
+
+/* ================= HEADER ================= */
+.header {
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.likes-badge {
+  display: inline-block;
+  background-color: white;
+  color: #0f172a;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* ================= LAYOUT ================= */
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 300px; /* main content + sidebar */
+  gap: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .main-container {
+    grid-template-columns: 1fr; /* stack vertically on small screens */
+  }
+
+  .favorites-sidebar {
+    width: 100%;
+  }
+}
+
+/* ================= FILTER ================= */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filter-bar button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  background: #1e293b;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filter-bar button:hover {
+  background: #334155;
+}
+
+.filter-bar button.active {
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: bold;
+}
+
+/* ================= CHARACTER GRID ================= */
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* ================= CHARACTER CARD ================= */
+.character-card {
+  background: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.character-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.character-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.character-card h3 {
+  margin: 10px;
+  font-size: 16px;
+}
+
+.character-card p {
+  margin: 0 10px 10px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* LIKE BUTTON */
+.character-card button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  padding: 6px 9px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+
+.character-card button:hover {
+  transform: scale(1.2);
+}
+
+.character-card button.liked {
+  background-color: #ef4444;
+}
+
+/* STATUS COLORS */
+.status-alive {
+  color: #22c55e;
+}
+
+.status-dead {
+  color: #ef4444;
+}
+
+.status-unknown {
+  color: #facc15;
+}
+
+/* ================= FAVORITES SIDEBAR ================= */
+.favorites-sidebar {
+  background: #020617;
+  border-radius: 12px;
+  padding: 15px;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.favorites-sidebar h2 {
+  margin-bottom: 15px;
+  color: #38bdf8;
+}
+
+.favorites-sidebar div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  background: #1e293b;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.favorites-sidebar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.favorites-sidebar button {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ================= LOADING ================= */
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 24px;
+}

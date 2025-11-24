@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+}
+
+.header {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.likes-badge {
+  background: #e74c3c;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.main-container {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 20px;
+  background: #34495e;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: #1abc9c;
+}
+
+.filter-btn.active {
+  background: #1abc9c;
+  font-weight: bold;
+}
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards par row fixe */
+  gap: 20px;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .character-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .character-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.character-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 10px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.character-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.character-card img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.like-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.like-btn.liked {
+  background: #e74c3c;
+}
+
+.character-info {
+  padding: 10px;
+}
+
+.character-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.character-status {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.status-alive {
+  color: #2ecc71;
+}
+
+.status-dead {
+  color: #e74c3c;
+}
+
+.status-unknown {
+  color: #f1c40f;
+}
+
+.favorites-sidebar {
+  width: 260px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 20px;
+  padding: 15px;
+  backdrop-filter: blur(8px);
+}
+
+.favorites-sidebar h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.favorite-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.1);
+  padding: 8px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.favorite-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.favorite-item span {
+  flex: 1;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.favorite-item button {
+  background: transparent;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.loading {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 50px;
+}
